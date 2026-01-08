@@ -21,7 +21,6 @@
             color: #4b5b2f;
         }
 
-        /* CENTRALIZA APENAS O CONTEÚDO PRINCIPAL */
         body {
             display: flex;
             flex-direction: column;
@@ -32,32 +31,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         /* GRID PRINCIPAL */
         .main {
             max-width: 1200px;
             width: 100%;
-            padding: 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        /* CONTAINERS */
         .box {
-            background: rgba(0, 0, 0, 0.164);
+            background: rgba(0, 0, 0, 0.16);
             padding: 20px;
             border-radius: 12px;
         }
 
-        /* TÍTULO */
-        .header {
-            grid-column: 1 / -1;
-            text-align: center;
-        }
-
-        /* FOOTER */
+        .header,
         .footer {
             grid-column: 1 / -1;
             text-align: center;
@@ -72,7 +64,6 @@
             margin-bottom: 8px;
         }
 
-        /* BOTÃO */
         a {
             display: inline-block;
             margin-top: 10px;
@@ -84,7 +75,7 @@
             font-weight: bold;
         }
 
-        /* FAQ BALÃO */
+        /* FAQ DESKTOP */
         .faq {
             position: fixed;
             bottom: 20px;
@@ -92,19 +83,15 @@
             z-index: 999;
         }
 
-        /* BOTÃO CIRCULAR */
-        .faq::before {
-            content: "FAQ ?";
+        .faq-button {
             background: #4b5b2f;
             color: #fff;
             padding: 15px 18px;
             border-radius: 50%;
             font-weight: bold;
             cursor: pointer;
-            display: inline-block;
         }
 
-        /* CAIXA FAQ */
         .faq-box {
             display: none;
             position: absolute;
@@ -118,7 +105,6 @@
             border-radius: 12px;
         }
 
-        /* MOSTRAR AO CLICAR */
         .faq.active .faq-box {
             display: block;
         }
@@ -134,11 +120,11 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 10px;
             border-radius: 8px;
-            cursor: pointer;
         }
 
         .faq-box summary {
             font-weight: bold;
+            cursor: pointer;
             list-style: none;
         }
 
@@ -151,10 +137,44 @@
             font-size: 0.95em;
         }
 
+        /* RODAPÉ */
+        footer {
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #a8c66c;
+        }
+
         /* MOBILE */
         @media (max-width: 768px) {
+
             .main {
                 grid-template-columns: 1fr;
+            }
+
+            /* FAQ VIRA BLOCO NORMAL */
+            .faq {
+                position: static;
+                margin: 20px;
+            }
+
+            .faq-box {
+                position: static;
+                width: 100%;
+                max-height: none;
+                margin-top: 10px;
+            }
+
+            .faq-button {
+                border-radius: 8px;
+                text-align: center;
             }
         }
     </style>
@@ -194,10 +214,11 @@
         </div>
     </div>
 
-    <!-- FAQ FLUTUANTE -->
-    <div class="faq" onclick="this.classList.toggle('active')">
-        <div class="faq-box">
+    <!-- FAQ -->
+    <div class="faq" id="faq">
+        <div class="faq-button" onclick="toggleFaq()">FAQ ?</div>
 
+        <div class="faq-box">
             <h1>Perguntas Frequentes</h1>
 
             <details>
@@ -229,9 +250,23 @@
                 <summary>6. Quem pode participar?</summary>
                 <p>CPF ou CNPJ atendidos pela Cemig em MG com consumo acima de R$150.</p>
             </details>
-
         </div>
     </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <strong>Serviço garantido pela Lei nº 14.300/22</strong>
+        Este serviço de compensação de créditos de energia solar é realizado em total conformidade
+        com o Marco Legal da Geração Distribuída (Lei nº 14.300/2022).
+        A operação é garantida pela legislação brasileira, permitindo a livre adesão de consumidores
+        à energia limpa e renovável com segurança jurídica e transparência.
+    </footer>
+
+    <script>
+        function toggleFaq() {
+            document.getElementById('faq').classList.toggle('active');
+        }
+    </script>
 
 </body>
 
