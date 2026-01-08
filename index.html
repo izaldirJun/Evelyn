@@ -75,6 +75,17 @@
             font-weight: bold;
         }
 
+        .table-image {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .table-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
         /* FAQ DESKTOP */
         .faq {
             position: fixed;
@@ -136,6 +147,7 @@
             margin-top: 8px;
             font-size: 0.95em;
         }
+        
 
         /* RODAPÉ */
         footer {
@@ -198,15 +210,15 @@
             </div>
 
             <div class="box">
-               <link rel="stylesheet" href="table.jpeg">
-            </div>
-
-            <div class="box">
                 <h2>Vantagens</h2>
                 <p>✔ Sem placas</p>
                 <p>✔ Sem obras</p>
                 <p>✔ Sem fidelidade</p>
                 <p>✔ Mesma distribuidora</p>
+            </div>
+
+            <div class="box table-image">
+                <img src="table.png" alt="Tabela de economia">
             </div>
 
             <div class="box footer">
