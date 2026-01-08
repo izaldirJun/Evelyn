@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Landing Page</title>
+    <title>Landing Page</title>
+
     <style>
-        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
@@ -14,101 +14,102 @@
             font-family: Arial, sans-serif;
         }
 
-        body,
-       html {
+        html,
+        body {
             height: 100%;
-            background-image: url("home.jpeg");
-            background-size: cover;          /* cobre toda a tela */
-            background-position: center;     /* centraliza a imagem */
-            background-repeat: no-repeat;    /* não repete */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: url("home.jpeg") center/cover no-repeat;
+            color: #fff;
+        }
+
+        /* GRID PRINCIPAL */
+        .main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        /* CONTAINERS PADRÃO */
+        .box {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        /* TÍTULO */
+        .header {
+            grid-column: 1 / -1;
             text-align: center;
-            color: #ffffff;
         }
 
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            /* leve transparência para destacar */
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        /* QUARTO CONTAINER */
+        .footer {
+            grid-column: 1 / -1;
+            text-align: center;
         }
 
-        .container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        h1,
+        h2 {
+            margin-bottom: 10px;
         }
 
-        .container h1 {
-            margin-bottom: 15px;
-            font-size: 2em;
+        p {
+            margin-bottom: 8px;
         }
 
-        .container p {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .container a {
-            text-decoration: none;
-            background-color: white;
+        /* BOTÃO */
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            background: #fff;
             color: #007BFF;
             padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .container a:hover {
-            background-color: #0056b3;
-            color: white;
-        }
-
-        .container1 {
-            max-width: 600px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            /* leve transparência para destacar */
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .container1 img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .container1 h1 {
-            margin-bottom: 15px;
-            font-size: 2em;
-        }
-
-        .container1 p {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .container1 a {
+            border-radius: 6px;
             text-decoration: none;
-            background-color: white;
-            color: #007BFF;
-            padding: 10px 20px;
-            border-radius: 5px;
             font-weight: bold;
-            transition: 0.3s;
         }
 
-        .container1 a:hover {
-            background-color: #0056b3;
-            color: white;
-        }
+        /* FAQ */
+.container5 {
+    max-width: 700px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    text-align: left;
+}
+
+.container5 h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container5 details {
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container5 summary {
+    font-weight: bold;
+    font-size: 1.05em;
+    list-style: none;
+}
+
+.container5 summary::-webkit-details-marker {
+    display: none;
+}
+
+.container5 details p {
+    margin-top: 10px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
 
         @media(max-width: 768px) {
             .container h1 {
@@ -122,66 +123,49 @@
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <img src="https://via.placeholder.com/400x200.png?text=Minha+Imagem">
-        <h1>Reduza a sua conta de energia de 18% á 26% sem investir nada!</h1>
-        <p>Energia solar por assinatura: sem obras, sem placas e sem taxas de adesão. 100% digital e gratuito.</p>
-        <a href="https://github.com" target="_blank">Acesse meu GitHub</a>
-    </div>
-    <div class="container1">
-        <img src="https://via.placeholder.com/400x200.png?text=Minha+Imagem">
-        <h1>Como funciona:</h1>
-        <p>1- A igreen gera energia limpa em fazendas solares.</p>
-        <p>2- Essa energia vira créditos na rede da Cemig, ou outras empresas.</p>
-        <p>3- Esses créditos abatem o valor da sua fatura automaticamente.</p>
-    </div>
-    <div class="container2">
-        <img src="https://via.placeholder.com/400x200.png?text=Minha+Imagem">
-        <h1>Vantagens:</h1>
-        <p>- Não precisa de placas.</p>
-        <p>- Não tem obras.</p>
-        <p>- Não troca o relógio.</p>
-        <p>- Não tem fidelidade.</p>
-        <p>- Você continua com a mesma distribuidora de energia, porém pagando menos.</p>
-    </div>
-    <div class="container3">
-        <img src="https://via.placeholder.com/400x200.png?text=Minha+Imagem">
-        <h1>Diferencial:</h1>
-        <p>Você não precisa mudar seus hábitos ou trocar a distribuidora.</p>
-        <p>O fornecimeno de energia permanece sob responsabilidade da sua empresa de costume, garantindo a mesma estabilidade de sempe.</p>
-        <p>O dieferencial é que, através do nosso modelo de compensação, os créditos de energia solar da iGreen são aplicados diretamente na sua conta atual,reduzindo o valorr final que você paga todos os meses, de forma automática e transparente.</p>
-<div class="container4">
-    <img src="https://via.placeholder.com/400x200.png?text=Minha+Imagem">
+<div class="main">
 
-    <h2>Quer entender exatamente quanto você pode economizar na sua própria na sua próxima fatura? Nossos especialistas estão prontos para realizar uma auditoria gratuita na sua conta de luz. Clique no botão abaixo para falar com um consultor autorizado iGreen via Whatsapp e receba sua simulação personalizada m poucos minutos.</h2>
-<a href="https://github.com" target="_blank">Acesse meu GitHub</a>
-</div>
+    <!-- 1️⃣ TÍTULO -->
+    <div class="box header">
+        <h1>Reduza sua conta de energia de 18% a 26% sem investir nada!</h1>
+        <p>Energia solar por assinatura, sem obras, sem placas e 100% digital.</p>
     </div>
-<div class="container2">
-    <img src="https://via.placeholder.com/400x200.png?text=Minha+Imagem">
-    <h1>Perguntas Frequentes (FAQ):</h1>
-    <p>1. Preciso de instalar placas solares no meu telhado?
-    Não! A economia é feita através de energia solar por assinatura. A energia é gerada nas nossas fazendas solares e
-    injetada na rede da Cemig. Não há obras, nem instalação de equipamentos na sua casa ou empresa..</p>
-    <p>2. Tenho de pagar alguma taxa de adesão ou mensalidade?
-    Zero. A adesão ao benefício iGreen é 100% gratuita. Não há mensalidades nem taxas escondidas. Você só paga pela energia
-    que consome, já com o desconto aplicado.</p>
-    <p>3. Vou deixar de receber a conta da Cemig?
-    Não. Você continua sendo cliente da Cemig e a conta continua chegando. A diferença é que nela aparecerá o abatimento dos
-    créditos de energia injetados pela iGreen, reduzindo o valor final do seu boleto.</p>
-    <p>4. E se não houver sol? Fico sem luz?
-    De forma alguma. O fornecimento de energia continua sendo garantido pela Cemig através da rede elétrica normal. A iGreen
-    apenas gere os créditos que reduzem o custo da sua conta.</p>
-    <p>5. Existe fidelidade ou multa de cancelamento?
-    Não. Na iGreen você tem liberdade total. Se quiser cancelar, basta solicitar (respeitando o aviso prévio), sem multas ou
-    complicações. Queremos que fique connosco pela economia, não por contrato.</p>
-    <p>6. Quem pode solicitar o desconto?
-    Qualquer pessoa (CPF) ou empresa (CNPJ) atendida pela Cemig em Minas Gerais que tenha um consumo médio acima de R$
-    150,00 (ou conforme a modalidade disponível para a sua região).</p>
+
+    <!-- 2️⃣ ESQUERDA -->
+    <div class="box">
+        <h2>Como funciona</h2>
+        <p>1 - Energia gerada em fazendas solares</p>
+        <p>2 - Créditos aplicados na sua conta</p>
+        <p>3 - Desconto automático na fatura</p>
+    </div>
+
+    <!-- 3️⃣ DIREITA -->
+    <div class="box">
+        <h2>Vantagens</h2>
+        <p>✔ Sem placas</p>
+        <p>✔ Sem obras</p>
+        <p>✔ Sem fidelidade</p>
+        <p>✔ Mesma distribuidora</p>
+    </div>
+
+    <!-- 4️⃣ EMBAIXO -->
+    <div class="box footer">
+        <h2>Quer saber quanto você pode economizar?</h2>
+        <p>Auditoria gratuita da sua conta de luz em minutos.</p>
+        <a href="#">Falar no WhatsApp</a>
+    </div>
+
 </div>
 
-   
+<!-- 5️⃣ FAQ BALÃO -->
+<div class="faq" onclick="this.classList.toggle('active')">
+    <strong>Preciso instalar placas solares?</strong>
+    <div class="faq-content">
+        Não. A energia vem das fazendas solares da iGreen e os créditos são aplicados diretamente na sua conta, sem
+        obras ou equipamentos.
+    </div>
+</div>
+
 </body>
 
 </html>
