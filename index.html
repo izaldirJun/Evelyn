@@ -15,21 +15,27 @@
         }
 
         html,
-        body {
-            height: 100%;
-            background: url("home.jpeg") center/cover no-repeat;
-            color: #fff;
-        }
+       html,
+body {
+    height: 100%;
+    background: url("home.jpeg") center/cover no-repeat;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
         /* GRID PRINCIPAL */
-        .main {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
-        }
+       .main {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
 
         /* CONTAINERS PADRÃO */
         .box {
