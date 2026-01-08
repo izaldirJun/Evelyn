@@ -15,29 +15,36 @@
         }
 
         html,
-       html,
-body {
-    height: 100%;
-    background: url("home.jpeg") center/cover no-repeat;
-    color: #fff;
+        body {
+            height: 100%;
+            background: url("home.jpeg") center/cover no-repeat;
+            color: #fff;
+        }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        /* CENTRALIZA APENAS O CONTEÚDO PRINCIPAL */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
 
+        .page-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         /* GRID PRINCIPAL */
-       .main {
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
+        .main {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-        /* CONTAINERS PADRÃO */
+        /* CONTAINERS */
         .box {
             background: rgba(0, 0, 0, 0.55);
             padding: 20px;
@@ -50,7 +57,7 @@ body {
             text-align: center;
         }
 
-        /* QUARTO CONTAINER */
+        /* FOOTER */
         .footer {
             grid-column: 1 / -1;
             text-align: center;
@@ -70,158 +77,161 @@ body {
             display: inline-block;
             margin-top: 10px;
             background: #4b5b2f;
-            color: #ffffff;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
         }
 
-        /* FAQ */
-.container5 {
-    max-width: 700px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-top: 20px;
-    text-align: left;
-}
+        /* FAQ BALÃO */
+        .faq {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
 
-.container5 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        /* BOTÃO CIRCULAR */
+        .faq::before {
+            content: "FAQ ?";
+            background: #4b5b2f;
+            color: #fff;
+            padding: 15px 18px;
+            border-radius: 50%;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+        }
 
-.container5 details {
-    margin-bottom: 12px;
-    background: rgba(255,255,255,0.1);
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
+        /* CAIXA FAQ */
+        .faq-box {
+            display: none;
+            position: absolute;
+            bottom: 65px;
+            right: 0;
+            width: 320px;
+            max-height: 70vh;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            border-radius: 12px;
+        }
 
-.container5 summary {
-    font-weight: bold;
-    font-size: 1.05em;
-    list-style: none;
-}
+        /* MOSTRAR AO CLICAR */
+        .faq.active .faq-box {
+            display: block;
+        }
 
-.container5 summary::-webkit-details-marker {
-    display: none;
-}
+        .faq-box h1 {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
 
-.container5 details p {
-    margin-top: 10px;
-    font-size: 0.95em;
-    line-height: 1.4;
-}
+        .faq-box details {
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-        @media(max-width: 768px) {
-            .container h1 {
-                font-size: 1.5em;
-            }
+        .faq-box summary {
+            font-weight: bold;
+            list-style: none;
+        }
 
-            .container p {
-                font-size: 1em;
+        .faq-box summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-box details p {
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .main {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
-<div class="main">
+<body>
 
-    <!-- 1️⃣ TÍTULO -->
-    <div class="box header">
-        <h1>Reduza sua conta de energia de 18% a 26% sem investir nada!</h1>
-        <p>Energia solar por assinatura, sem obras, sem placas e 100% digital.</p>
+    <div class="page-center">
+        <div class="main">
+
+            <div class="box header">
+                <h1>Reduza sua conta de energia de 18% a 26% sem investir nada!</h1>
+                <p>Energia solar por assinatura, sem obras, sem placas e 100% digital.</p>
+            </div>
+
+            <div class="box">
+                <h2>Como funciona</h2>
+                <p>1 - Energia gerada em fazendas solares</p>
+                <p>2 - Créditos aplicados na sua conta</p>
+                <p>3 - Desconto automático na fatura</p>
+            </div>
+
+            <div class="box">
+                <h2>Vantagens</h2>
+                <p>✔ Sem placas</p>
+                <p>✔ Sem obras</p>
+                <p>✔ Sem fidelidade</p>
+                <p>✔ Mesma distribuidora</p>
+            </div>
+
+            <div class="box footer">
+                <h2>Quer saber quanto você pode economizar?</h2>
+                <p>Auditoria gratuita da sua conta de luz em minutos.</p>
+                <a href="#">Falar no WhatsApp</a>
+            </div>
+
+        </div>
     </div>
 
-    <!-- 2️⃣ ESQUERDA -->
-    <div class="box">
-        <h2>Como funciona</h2>
-        <p>1 - Energia gerada em fazendas solares</p>
-        <p>2 - Créditos aplicados na sua conta</p>
-        <p>3 - Desconto automático na fatura</p>
-    </div>
+    <!-- FAQ FLUTUANTE -->
+    <div class="faq" onclick="this.classList.toggle('active')">
+        <div class="faq-box">
 
-    <!-- 3️⃣ DIREITA -->
-    <div class="box">
-        <h2>Vantagens</h2>
-        <p>✔ Sem placas</p>
-        <p>✔ Sem obras</p>
-        <p>✔ Sem fidelidade</p>
-        <p>✔ Mesma distribuidora</p>
-    </div>
+            <h1>Perguntas Frequentes</h1>
 
-    <!-- 4️⃣ EMBAIXO -->
-    <div class="box footer">
-        <h2>Quer saber quanto você pode economizar?</h2>
-        <p>Auditoria gratuita da sua conta de luz em minutos.</p>
-        <a href="#">Falar no WhatsApp</a>
-    </div>
+            <details>
+                <summary>1. Preciso instalar placas solares?</summary>
+                <p>Não! A energia vem das fazendas solares e é injetada na rede da Cemig.</p>
+            </details>
 
-</div>
+            <details>
+                <summary>2. Pago mensalidade?</summary>
+                <p>Não. A adesão é gratuita e você paga apenas pelo consumo com desconto.</p>
+            </details>
 
-<!-- 5️⃣ FAQ BALÃO -->
-<div class="faq" onclick="this.classList.toggle('active')">
-    <div class="faq-box">
-    
-        <h1>Perguntas Frequentes</h1>
-    
-        <details>
-            <summary>1. Preciso de instalar placas solares no meu telhado?</summary>
-            <p>
-                Não! A economia é feita através de energia solar por assinatura.
-                A energia é gerada nas nossas fazendas solares e injetada na rede da Cemig.
-                Não há obras, nem instalação de equipamentos na sua casa ou empresa.
-            </p>
-        </details>
-    
-        <details>
-            <summary>2. Tenho de pagar alguma taxa de adesão ou mensalidade?</summary>
-            <p>
-                Zero. A adesão ao benefício iGreen é 100% gratuita.
-                Não há mensalidades nem taxas escondidas.
-                Você só paga pela energia que consome, já com o desconto aplicado.
-            </p>
-        </details>
-    
-        <details>
-            <summary>3. Vou deixar de receber a conta da Cemig?</summary>
-            <p>
-                Não. Você continua sendo cliente da Cemig.
-                A conta continua chegando normalmente, mas com o abatimento
-                dos créditos de energia solar, reduzindo o valor final.
-            </p>
-        </details>
-    
-        <details>
-            <summary>4. E se não houver sol? Fico sem luz?</summary>
-            <p>
-                De forma alguma. O fornecimento de energia continua garantido
-                pela Cemig através da rede elétrica convencional.
-            </p>
-        </details>
-    
-        <details>
-            <summary>5. Existe fidelidade ou multa de cancelamento?</summary>
-            <p>
-                Não. Você pode cancelar quando quiser, sem multas.
-                Queremos que você fique pela economia, não por contrato.
-            </p>
-        </details>
-    
-        <details>
-            <summary>6. Quem pode solicitar o desconto?</summary>
-            <p>
-                Qualquer pessoa (CPF) ou empresa (CNPJ) atendida pela Cemig
-                em Minas Gerais, com consumo médio acima de R$ 150,00.
-            </p>
-        </details>
-    
+            <details>
+                <summary>3. Vou parar de receber a conta?</summary>
+                <p>Não. Você continua recebendo normalmente com o desconto aplicado.</p>
+            </details>
+
+            <details>
+                <summary>4. E se não houver sol?</summary>
+                <p>O fornecimento continua garantido pela Cemig.</p>
+            </details>
+
+            <details>
+                <summary>5. Existe multa?</summary>
+                <p>Não. Cancelamento livre, sem fidelidade.</p>
+            </details>
+
+            <details>
+                <summary>6. Quem pode participar?</summary>
+                <p>CPF ou CNPJ atendidos pela Cemig em MG com consumo acima de R$150.</p>
+            </details>
+
+        </div>
     </div>
-</div>
 
 </body>
 
