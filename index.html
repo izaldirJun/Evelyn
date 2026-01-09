@@ -14,18 +14,17 @@
             font-family: Arial, sans-serif;
         }
 
-        html,
-        body {
-            height: 100%;
-            background: url("home.jpeg") center/cover no-repeat;
-            color: #4b5b2f;
-        }
+       html, body {
+                min-height: 100%;
+            }
 
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
+            body {
+                background: url("home.jpeg") center top / cover no-repeat;
+                background-attachment: fixed; /* opcional */
+                color: #4b5b2f;
+                display: flex;
+                flex-direction: column;
+            }
         .page-center {
             flex: 1;
             display: flex;
