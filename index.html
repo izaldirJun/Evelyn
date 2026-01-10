@@ -18,20 +18,22 @@
                 min-height: 100%;
             }
 
-            body {
-                background: url("home.jpeg") center top / cover no-repeat;
-                background-attachment: fixed;
-                color: #4b5b2f;
-                display: flex;
-                flex-direction: column;
-            }
-            body::before {
-                content: "";
-                position: fixed;
-                inset: 0;
-                background: #4b5b2f;
-                z-index: -1;
-            }
+           body {
+            position: relative;
+            background: url("home.jpeg") center top / cover no-repeat;
+            background-attachment: fixed;
+            color: #4b5b2f;
+            display: flex;
+            flex-direction: column;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 0;
+        }
+
         .page-center {
             flex: 1;
             display: flex;
