@@ -240,27 +240,19 @@
             gap: 10px;
         }
        /* TRABALHE CONOSCO FIXO À DIREITA */
-        .trab-link {
-            position: fixed;
-            bottom: 20px;
-            left: 110px; /* fica ao lado do FAQ */
-            z-index: 998;
+       .trab-link {
+            position: static;        /* deixa de ser flutuante */
+            display: block;
 
-            background: #4b5b2f;
-            color: #fff;
+            margin: 20px auto;       /* centraliza como box */
+            width: 100%;
+            max-width: 320px;
 
-            width: 80px;
-            height: 80px;
+            height: auto;
+            padding: 15px 20px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-            font-weight: bold;
+            border-radius: 8px;      /* formato de box */
             text-align: center;
-            text-decoration: none;
-            line-height: 1.2;
         }
 
         /* Hover elegante */
@@ -285,11 +277,47 @@
             color: #a8c66c;
         }
 
-       /* MOBILE */ @media (max-width: 768px) { 
-        .main { grid-template-columns: 1fr; } /* FAQ VIRA BLOCO NORMAL */ 
-        .faq { position: static; margin: 20px; } 
-        .faq-box { position: static; width: 100%; max-height: none; margin-top: 10px; } 
-        .faq-button { border-radius: 8px; text-align: center; } } 
+       /* MOBILE */ 
+       @media (max-width: 768px) {
+
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    /* FAQ VIRA BLOCO NORMAL */
+    .faq {
+        position: static;
+        margin: 20px;
+    }
+
+    .faq-box {
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin-top: 10px;
+    }
+
+    .faq-button {
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* TRABALHE CONOSCO VIRA BOX IGUAL WHATSAPP */
+    .trab-link {
+        position: static;
+        display: block;
+
+        margin: 20px auto;
+        width: 100%;
+        max-width: 320px;
+
+        height: auto;
+        padding: 15px 20px;
+
+        border-radius: 8px;
+        text-align: center;
+    }
+}
         
     </style>
 </head>
