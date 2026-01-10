@@ -162,7 +162,20 @@
             font-size: 0.95em;
         }
 
-        .trab-button {
+       /* BOTÕES FLUTUANTES */
+        .floating-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* BOTÕES */
+        .faq-button,
+        .trab-link {
             background: #4b5b2f;
             color: #fff;
             padding: 15px 18px;
@@ -170,8 +183,16 @@
             font-weight: bold;
             cursor: pointer;
             text-align: center;
+            text-decoration: none;
+            width: 80px;
         }
-                
+
+        /* Hover elegante */
+        .faq-button:hover,
+        .trab-link:hover {
+            opacity: 0.9;
+        }
+                        
 
         /* RODAPÉ */
         footer {
@@ -254,11 +275,9 @@
         </div>
     </div>
 
-    <div class="floating-left">
-        <div class="trab-button">
-            Trabalhe<br>Conosco
-        </div>
-    </div>
+    <a href="https://wa.me/5531999999999" target="_blank" class="trab-link">
+        Trabalhe<br>Conosco
+    </a>
 
     <!-- FAQ -->
     <div class="faq" id="faq">
