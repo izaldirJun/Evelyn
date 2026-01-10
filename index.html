@@ -13,39 +13,36 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-
-       html, body {
-                min-height: 100%;
-            }
-
-           body {
+    
+        html,
+        body {
+            min-height: 100%;
+        }
+    
+        body {
             position: relative;
-            background: url("home.jpeg") center top / cover no-repeat;
-            background-attachment: fixed;
+            background: url("home.jpeg") center top / cover no-repeat fixed;
             color: #4b5b2f;
             display: flex;
             flex-direction: column;
         }
-
+    
         body::before {
             content: "";
             position: fixed;
             inset: 0;
-            background: url("home.jpeg") center top / cover no-repeat;
-            background-attachment: fixed;
+            background: url("home.jpeg") center top / cover no-repeat fixed;
             z-index: -1;
         }
-
+    
         .page-center {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            position: relative;
-            z-index: 1;
         }
-
+    
         /* GRID PRINCIPAL */
         .main {
             max-width: 1200px;
@@ -54,31 +51,29 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
-       .box {
-            position: relative;
-            z-index: 2;
+    
+        .box {
             background: rgba(75, 91, 47, 0.22);
             padding: 20px;
             border-radius: 12px;
         }
-
+    
         .header,
         .footer {
             grid-column: 1 / -1;
             text-align: center;
         }
-
+    
         h1,
         h2 {
             margin-bottom: 10px;
         }
-
+    
         p {
             margin-bottom: 8px;
         }
-
-        a {
+    
+        a.button {
             display: inline-block;
             margin-top: 10px;
             background: #4b5b2f;
@@ -88,82 +83,21 @@
             text-decoration: none;
             font-weight: bold;
         }
-
+    
         .table-image {
             grid-column: 1 / -1;
             text-align: center;
         }
-
+    
         .table-image img {
             max-width: 100%;
-            height: auto;
             border-radius: 12px;
         }
-
-        /* FAQ DESKTOP */
-        .faq {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-        }
-
-        .faq-button {
-            background: #bdbaa8;
-            color: #fff;
-            padding: 15px 18px;
-            border-radius: 50%;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .faq-box {
-            display: none;
-            position: absolute;
-            bottom: 65px;
-            right: 0;
-            width: 320px;
-            max-height: 70vh;
-            overflow-y: auto;
-            background: #4b5b2f38;
-            padding: 15px;
-            border-radius: 12px;
-        }
-
-        .faq.active .faq-box {
-            display: block;
-        }
-
-        .faq-box h1 {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-
-        .faq-box details {
-            margin-bottom: 10px;
-            background: rgba(77, 71, 71, 0.233);
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        .faq-box summary {
-            font-weight: bold;
-            cursor: pointer;
-            list-style: none;
-        }
-
-        .faq-box summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-box details p {
-            margin-top: 8px;
-            font-size: 0.95em;
-        }
-
-       /* BOTÕES FLUTUANTES */
-        .floating-right {
+    
+        /* ===============================
+               BOTÕES FLUTUANTES
+            =============================== */
+        .floating-actions {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -172,28 +106,84 @@
             flex-direction: column;
             gap: 10px;
         }
-
-        /* BOTÕES */
-        .faq-button,
+    
+        /* ===============================
+               TRABALHE CONOSCO (LINK)
+            =============================== */
         .trab-link {
             background: #4b5b2f;
             color: #fff;
-            padding: 20px 20px;
+            padding: 15px;
+            border-radius: 50%;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            width: 90px;
+        }
+    
+        .trab-link:hover {
+            opacity: 0.9;
+        }
+    
+        /* ===============================
+               FAQ
+            =============================== */
+        .faq {
+            position: relative;
+        }
+    
+        .faq-button {
+            background: #bdbaa8;
+            color: #fff;
+            padding: 15px;
             border-radius: 50%;
             font-weight: bold;
             cursor: pointer;
             text-align: center;
-            text-decoration: none;
-            width: 80px;
+            width: 90px;
         }
-
-        /* Hover elegante */
-        .faq-button:hover,
-        .trab-link:hover {
-            opacity: 0.9;
+    
+        .faq-box {
+            display: none;
+            position: absolute;
+            bottom: 65px;
+            right: 0;
+            width: 320px;
+            max-height: 70vh;
+            overflow-y: auto;
+            background: #bdbaa8;
+            padding: 15px;
+            border-radius: 12px;
+            color: #fff;
         }
-                        
-
+    
+        .faq.active .faq-box {
+            display: block;
+        }
+    
+        .faq-box h1 {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+    
+        .faq-box details {
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            border-radius: 8px;
+        }
+    
+        .faq-box summary {
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+        }
+    
+        .faq-box summary::-webkit-details-marker {
+            display: none;
+        }
+    
         /* RODAPÉ */
         footer {
             background: rgba(0, 0, 0, 0.75);
@@ -202,36 +192,22 @@
             text-align: center;
             font-size: 0.9em;
         }
-
+    
         footer strong {
             display: block;
             margin-bottom: 10px;
             color: #a8c66c;
         }
-
+    
         /* MOBILE */
         @media (max-width: 768px) {
-
             .main {
                 grid-template-columns: 1fr;
             }
-
-            /* FAQ VIRA BLOCO NORMAL */
-            .faq {
-                position: static;
-                margin: 20px;
-            }
-
-            .faq-box {
-                position: static;
-                width: 100%;
-                max-height: none;
-                margin-top: 10px;
-            }
-
-            .faq-button {
-                border-radius: 8px;
-                text-align: center;
+    
+            .floating-actions {
+                right: 10px;
+                bottom: 10px;
             }
         }
     </style>
