@@ -14,45 +14,26 @@
             font-family: Arial, sans-serif;
         }
 
-        html,
-        body {
-            min-height: 100%;
-        }
+       html, body {
+                min-height: 100%;
+            }
 
-        body {
+           body {
             position: relative;
-            background: url("home.jpeg") center top / cover no-repeat fixed;
+            background: url("home.jpeg") center top / cover no-repeat;
+            background-attachment: fixed;
             color: #4b5b2f;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
         }
 
-        /* ONDA VERDE */
-        body::after {
+        body::before {
             content: "";
             position: fixed;
-            top: 0;
-            right: 0;
-            width: 35%;
-            height: 100vh;
-            background: #4b5b2f;
-            z-index: 0;
-
-            clip-path: polygon(45% 0%,
-                    60% 8%,
-                    70% 16%,
-                    62% 26%,
-                    72% 36%,
-                    62% 46%,
-                    72% 56%,
-                    62% 66%,
-                    72% 76%,
-                    62% 86%,
-                    72% 96%,
-                    45% 100%,
-                    100% 100%,
-                    100% 0%);
+            inset: 0;
+            background: url("home.jpeg") center top / cover no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
         }
 
         .page-center {
@@ -60,7 +41,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 20px;
             position: relative;
             z-index: 1;
         }
@@ -74,11 +55,12 @@
             gap: 20px;
         }
 
-        .box {
-            background: rgba(255, 255, 255, 0.75);
-            padding: 24px;
-            border-radius: 14px;
-            backdrop-filter: blur(4px);
+       .box {
+            position: relative;
+            z-index: 2;
+            background: rgba(75, 91, 47, 0.22);
+            padding: 20px;
+            border-radius: 12px;
         }
 
         .header,
@@ -101,8 +83,8 @@
             margin-top: 10px;
             background: #4b5b2f;
             color: #fff;
-            padding: 12px 22px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -118,12 +100,12 @@
             border-radius: 12px;
         }
 
-        /* FAQ */
+        /* FAQ DESKTOP */
         .faq {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 10;
+            z-index: 999;
         }
 
         .faq-button {
@@ -143,7 +125,7 @@
             width: 320px;
             max-height: 70vh;
             overflow-y: auto;
-            background: rgba(255, 255, 255, 0.9);
+            background: #4b5b2f38;
             padding: 15px;
             border-radius: 12px;
         }
@@ -152,14 +134,42 @@
             display: block;
         }
 
+        .faq-box h1 {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .faq-box details {
+            margin-bottom: 10px;
+            background: rgba(77, 71, 71, 0.233);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .faq-box summary {
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-box summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-box details p {
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        
+
+        /* RODAPÉ */
         footer {
             background: rgba(0, 0, 0, 0.75);
             color: #fff;
             padding: 25px 20px;
             text-align: center;
             font-size: 0.9em;
-            position: relative;
-            z-index: 1;
         }
 
         footer strong {
@@ -170,14 +180,12 @@
 
         /* MOBILE */
         @media (max-width: 768px) {
+
             .main {
                 grid-template-columns: 1fr;
             }
 
-            body::after {
-                display: none;
-            }
-
+            /* FAQ VIRA BLOCO NORMAL */
             .faq {
                 position: static;
                 margin: 20px;
@@ -192,6 +200,7 @@
 
             .faq-button {
                 border-radius: 8px;
+                text-align: center;
             }
         }
     </style>
@@ -235,10 +244,52 @@
         </div>
     </div>
 
+    <!-- FAQ -->
+    <div class="faq" id="faq">
+        <div class="faq-button" onclick="toggleFaq()">FAQ ?</div>
+
+        <div class="faq-box">
+            <h1>Perguntas Frequentes</h1>
+
+            <details>
+                <summary>1. Preciso instalar placas solares?</summary>
+                <p>Não! A energia vem das fazendas solares e é injetada na rede da Cemig.</p>
+            </details>
+
+            <details>
+                <summary>2. Pago mensalidade?</summary>
+                <p>Não. A adesão é gratuita e você paga apenas pelo consumo com desconto.</p>
+            </details>
+
+            <details>
+                <summary>3. Vou parar de receber a conta?</summary>
+                <p>Não. Você continua recebendo normalmente com o desconto aplicado.</p>
+            </details>
+
+            <details>
+                <summary>4. E se não houver sol?</summary>
+                <p>O fornecimento continua garantido pela Cemig.</p>
+            </details>
+
+            <details>
+                <summary>5. Existe multa?</summary>
+                <p>Não. Cancelamento livre, sem fidelidade.</p>
+            </details>
+
+            <details>
+                <summary>6. Quem pode participar?</summary>
+                <p>CPF ou CNPJ atendidos pela Cemig em MG com consumo acima de R$150.</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
     <footer>
         <strong>Serviço garantido pela Lei nº 14.300/22</strong>
         Este serviço de compensação de créditos de energia solar é realizado em total conformidade
-        com o Marco Legal da Geração Distribuída.
+        com o Marco Legal da Geração Distribuída (Lei nº 14.300/2022).
+        A operação é garantida pela legislação brasileira, permitindo a livre adesão de consumidores
+        à energia limpa e renovável com segurança jurídica e transparência.
     </footer>
 
     <script>
