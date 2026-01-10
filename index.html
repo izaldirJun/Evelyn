@@ -27,12 +27,23 @@
             flex-direction: column;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url("home.jpeg") center top / cover no-repeat;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+
         .page-center {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         /* GRID PRINCIPAL */
@@ -44,8 +55,10 @@
             gap: 20px;
         }
 
-        .box {
-            background: #4b5b2f38;
+       .box {
+            position: relative;
+            z-index: 2;
+            background: rgba(75, 91, 47, 0.22);
             padding: 20px;
             border-radius: 12px;
         }
