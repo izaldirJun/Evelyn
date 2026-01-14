@@ -34,7 +34,6 @@
             padding: 20px;
         }
     
-        /* GRID PRINCIPAL */
         .main {
             max-width: 1200px;
             width: 100%;
@@ -92,8 +91,10 @@
         .floating-button {
             position: fixed;
             bottom: 20px;
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            /* MESMA MEDIDA */
+            height: 90px;
+            /* MESMA MEDIDA */
             background: #4b5b2f;
             color: #fff;
             border-radius: 50%;
@@ -106,30 +107,30 @@
             cursor: pointer;
             z-index: 999;
             line-height: 1.2;
+            font-size: 14px;
         }
     
-        /* Trabalhe Conosco - ESQUERDA */
         .trab-button {
             left: 20px;
         }
     
-        /* FAQ - DIREITA */
         .faq-button {
             right: 20px;
         }
     
-        /* CAIXA FAQ */
+        /* ===================== */
+        /* FAQ CAIXA (ESTILO NOVO) */
+        /* ===================== */
+    
         .faq-box {
             display: none;
             position: fixed;
             bottom: 120px;
             right: 20px;
-            width: 320px;
-            max-height: 70vh;
-            overflow-y: auto;
-            background: rgba(75, 91, 47, 0.9);
-            padding: 15px;
-            border-radius: 12px;
+            width: 340px;
+            background: #4b5b2f;
+            padding: 18px;
+            border-radius: 14px;
             color: #fff;
             z-index: 998;
         }
@@ -144,11 +145,12 @@
             margin-bottom: 15px;
         }
     
+        /* BLOCO DE PERGUNTA */
         .faq-box details {
+            background: rgba(0, 0, 0, 0.28);
+            padding: 12px 14px;
+            border-radius: 10px;
             margin-bottom: 10px;
-            background: rgba(0, 0, 0, 0.25);
-            padding: 10px;
-            border-radius: 8px;
         }
     
         .faq-box summary {
@@ -164,14 +166,19 @@
         .faq-box details p {
             margin-top: 8px;
             font-size: 0.95em;
+            line-height: 1.4;
         }
-
+    
+        /* ===================== */
+        /* MOBILE */
+        /* ===================== */
+    
         .mobile-actions {
             display: none;
             gap: 12px;
             margin: 20px 0;
         }
-
+    
         .mobile-action {
             background: #4b5b2f;
             color: #fff;
@@ -181,38 +188,31 @@
             text-align: center;
             cursor: pointer;
         }
-
-        /* FAQ mobile */
+    
         .mobile-faq-content {
             display: none;
-            background: rgba(75, 91, 47, 0.9);
+            background: #4b5b2f;
             margin-top: 10px;
             padding: 15px;
             border-radius: 10px;
             color: #fff;
         }
     
-        /* MOBILE */
         @media (max-width: 768px) {
     
-           .floating-button{
-            display: none !important;
+            .floating-button {
+                display: none !important;
             }
     
             .main {
                 grid-template-columns: 1fr;
             }
-
-            .mobile-actions {
-                display: block;
-            }
     
-            .mobile-only {
+            .mobile-actions {
                 display: block;
             }
         }
     
-        /* RODAPÉ */
         footer {
             background: rgba(0, 0, 0, 0.75);
             color: #fff;
