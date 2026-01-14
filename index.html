@@ -13,39 +13,27 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-
-       html, body {
-                min-height: 100%;
-            }
-
-           body {
-            position: relative;
-            background: url("home.jpeg") center top / cover no-repeat;
-            background-attachment: fixed;
+    
+        html,
+        body {
+            min-height: 100%;
+        }
+    
+        body {
+            background: url("home.jpeg") center top / cover no-repeat fixed;
             color: #4b5b2f;
             display: flex;
             flex-direction: column;
         }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: url("home.jpeg") center top / cover no-repeat;
-            background-attachment: fixed;
-            z-index: -1;
-        }
-
+    
         .page-center {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            position: relative;
-            z-index: 1;
         }
-
+    
         /* GRID PRINCIPAL */
         .main {
             max-width: 1200px;
@@ -54,30 +42,28 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
-       .box {
-            position: relative;
-            z-index: 2;
+    
+        .box {
             background: rgba(75, 91, 47, 0.22);
             padding: 20px;
             border-radius: 12px;
         }
-
+    
         .header,
         .footer {
             grid-column: 1 / -1;
             text-align: center;
         }
-
+    
         h1,
         h2 {
             margin-bottom: 10px;
         }
-
+    
         p {
             margin-bottom: 8px;
         }
-
+    
         a {
             display: inline-block;
             margin-top: 10px;
@@ -88,196 +74,114 @@
             text-decoration: none;
             font-weight: bold;
         }
-
+    
         .table-image {
             grid-column: 1 / -1;
             text-align: center;
         }
-
+    
         .table-image img {
             max-width: 100%;
-            height: auto;
             border-radius: 12px;
         }
-
-        /* FAQ DESKTOP */
-        .faq {
+    
+        /* ===================== */
+        /* BOTÕES FLUTUANTES */
+        /* ===================== */
+    
+        .floating-button {
             position: fixed;
             bottom: 20px;
-            right: 20px;
-            z-index: 999;
-        }
-
-        .faq-button {
-            background: #bdbaa8;
+            width: 80px;
+            height: 80px;
+            background: #4b5b2f;
             color: #fff;
-            padding: 15px 18px;
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             font-weight: bold;
+            text-decoration: none;
             cursor: pointer;
+            z-index: 999;
+            line-height: 1.2;
         }
-
+    
+        /* Trabalhe Conosco - ESQUERDA */
+        .trab-button {
+            left: 20px;
+        }
+    
+        /* FAQ - DIREITA */
+        .faq-button {
+            right: 20px;
+        }
+    
+        /* CAIXA FAQ */
         .faq-box {
             display: none;
-            position: absolute;
-            bottom: 65px;
-            right: 0;
+            position: fixed;
+            bottom: 120px;
+            right: 20px;
             width: 320px;
             max-height: 70vh;
             overflow-y: auto;
-            background: #4b5b2f38;
+            background: rgba(75, 91, 47, 0.9);
             padding: 15px;
             border-radius: 12px;
+            color: #fff;
+            z-index: 998;
         }
-
+    
         .faq.active .faq-box {
             display: block;
         }
-
+    
         .faq-box h1 {
             text-align: center;
             font-size: 1.2em;
             margin-bottom: 15px;
         }
-
+    
         .faq-box details {
             margin-bottom: 10px;
-            background: rgba(77, 71, 71, 0.233);
+            background: rgba(0, 0, 0, 0.25);
             padding: 10px;
             border-radius: 8px;
         }
-
+    
         .faq-box summary {
             font-weight: bold;
             cursor: pointer;
             list-style: none;
         }
-
+    
         .faq-box summary::-webkit-details-marker {
             display: none;
         }
-
+    
         .faq-box details p {
             margin-top: 8px;
             font-size: 0.95em;
         }
-
-       /* BOTÕES FLUTUANTES */
-        .floating-right {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+    
+        /* MOBILE */
+        @media (max-width: 768px) {
+    
+            .floating-button {
+                display: none;
+            }
+    
+            .main {
+                grid-template-columns: 1fr;
+            }
+    
+            .mobile-only {
+                display: block;
+            }
         }
-
-        /* BOTÕES */
-        .faq-button{
-            position: fixed;
-            bottom: 20px;
-            right: 110px; /* fica ao lado do FAQ */
-            z-index: 998;
-            background: #4b5b2f;
-            color: #fff;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            line-height: 1.2;
-        }
-
-         .trab-button{
-            position: fixed;
-            bottom: 20px;
-            left: 110px; /* fica ao lado do FAQ */
-            z-index: 998;
-            background: #4b5b2f;
-            color: #fff;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            line-height: 1.2;
-        }
-
-
-         .trab.active .faq-box {
-            display: block;
-        }
-
-        .trab-box h1 {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-
-        .trab-box details {
-            margin-bottom: 10px;
-            background: rgba(77, 71, 71, 0.233);
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        .trab-box summary {
-            font-weight: bold;
-            cursor: pointer;
-            list-style: none;
-        }
-
-        .trab-box summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .trab-box details p {
-            margin-top: 8px;
-            font-size: 0.95em;
-        }
-
-       /* BOTÕES FLUTUANTES */
-        .floating-right {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-       /* TRABALHE CONOSCO FIXO À DIREITA */
-       .trab-link {
-            position: static;        /* deixa de ser flutuante */
-            display: block;
-
-            margin: 20px auto;       /* centraliza como box */
-            width: 100%;
-            max-width: 320px;
-
-            height: auto;
-            padding: 15px 20px;
-
-            border-radius: 8px;      /* formato de box */
-            text-align: center;
-        }
-
-        /* Hover elegante */
-        .faq-button:hover,
-        .trab-link:hover {
-            opacity: 0.9;
-        }
-                        
-
+    
         /* RODAPÉ */
         footer {
             background: rgba(0, 0, 0, 0.75);
@@ -286,55 +190,12 @@
             text-align: center;
             font-size: 0.9em;
         }
-
+    
         footer strong {
             display: block;
             margin-bottom: 10px;
             color: #a8c66c;
         }
-
-        .mobile-only {
-            display: none;
-        }
-
-/* DESKTOP */
-.desktop-only {
-    display: block;
-}
-
-.mobile-only {
-    display: none;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .desktop-only {
-        display: none;
-    }
-
-    .mobile-only {
-        display: block;
-    }
-
-    .faq,
-    .trab {
-        position: static;
-        margin: 20px;
-    }
-
-    .faq-button,
-    .trab-button {
-        display: none; /* some com as bolinhas */
-    }
-
-    .faq-box {
-        display: block;
-        position: static;
-        width: 100%;
-        max-width: 100%;
-    }
-}    
     </style>
 </head>
 
@@ -372,111 +233,52 @@
                 <p>Auditoria gratuita da sua conta de luz em minutos.</p>
                 <a href="https://wa.me/5531999974600?text=Ol%C3%A1%20Evelyn!%20Quero%20me%20cadastrar%20e%20garantir%20meu%20desconto%20agora%20mesmo!">Falar no WhatsApp</a>
             </div>
-
         </div>
     </div>
 
-    <div class="desktop-only">
-        <div class="trab" id="trab">
-            <div class="trab-button">Trabalhe<br>Conosco</div>
-        </div>
-    
-        <div class="faq" id="faq">
-            <div class="faq-button" onclick="toggleFaq()">FAQ ?</div>
-                <div class="faq-box">
-                    <h1>Perguntas Frequentes</h1>
-                
-                    <details>
-                        <summary>1. Preciso instalar placas solares?</summary>
-                        <p>Não! A energia vem das fazendas solares e é injetada na rede da Cemig.</p>
-                    </details>
-                
-                    <details>
-                        <summary>2. Pago mensalidade?</summary>
-                        <p>Não. A adesão é gratuita e você paga apenas pelo consumo com desconto.</p>
-                    </details>
-                
-                    <details>
-                        <summary>3. Vou parar de receber a conta?</summary>
-                        <p>Não. Você continua recebendo normalmente com o desconto aplicado.</p>
-                    </details>
-                
-                    <details>
-                        <summary>4. E se não houver sol?</summary>
-                        <p>O fornecimento continua garantido pela Cemig.</p>
-                    </details>
-                
-                    <details>
-                        <summary>5. Existe multa?</summary>
-                        <p>Não. Cancelamento livre, sem fidelidade.</p>
-                    </details>
-                
-                    <details>
-                        <summary>6. Quem pode participar?</summary>
-                        <p>CPF ou CNPJ atendidos pela Cemig em MG com consumo acima de R$150.</p>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="trab" id="trab">
-        <div class="trab-button">Trabalhe Conosco</div>
-        <div class="faq-box">
-            <a href="https://wa.me/5531999974600?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20a%20faturar%20com%20a%20iGreen.%20Como%20funciona%3F"
-                target="_blank" class="trab-button">
-                Trabalhe<br>Conosco
-            </a>
-        </div>
-    </div>
+    <a href="https://wa.me/5531999974600?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20a%20faturar%20com%20a%20iGreen."
+        target="_blank" class="floating-button trab-button">
+        Trabalhe<br>Conosco
+    </a>
 
-    <!-- FAQ -->
     <div class="faq" id="faq">
-        <div class="faq-button" onclick="toggleFaq()">FAQ ?</div>
-
+        <div class="floating-button faq-button" onclick="toggleFaq()">FAQ ?</div>
+    
         <div class="faq-box">
             <h1>Perguntas Frequentes</h1>
-
+        
             <details>
                 <summary>1. Preciso instalar placas solares?</summary>
                 <p>Não! A energia vem das fazendas solares e é injetada na rede da Cemig.</p>
             </details>
-
+        
             <details>
                 <summary>2. Pago mensalidade?</summary>
                 <p>Não. A adesão é gratuita e você paga apenas pelo consumo com desconto.</p>
             </details>
-
+        
             <details>
                 <summary>3. Vou parar de receber a conta?</summary>
                 <p>Não. Você continua recebendo normalmente com o desconto aplicado.</p>
             </details>
-
+        
             <details>
                 <summary>4. E se não houver sol?</summary>
                 <p>O fornecimento continua garantido pela Cemig.</p>
             </details>
-
+        
             <details>
                 <summary>5. Existe multa?</summary>
                 <p>Não. Cancelamento livre, sem fidelidade.</p>
             </details>
-
+        
             <details>
                 <summary>6. Quem pode participar?</summary>
                 <p>CPF ou CNPJ atendidos pela Cemig em MG com consumo acima de R$150.</p>
             </details>
         </div>
-
-            <div class="box mobile-only">
-                <h2>Trabalhe Conosco</h2>
-                <p>Comece a faturar com a iGreen agora mesmo.</p>
-                <a
-                    href="https://wa.me/5531999974600?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20a%20faturar%20com%20a%20iGreen.%20Como%20funciona%3F">
-                    Falar no WhatsApp
-                </a>
-            </div>
-        </div>
     </div>
+
 
     <!-- RODAPÉ -->
     <footer>
