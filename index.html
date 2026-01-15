@@ -175,10 +175,11 @@
     
         .mobile-actions {
             display: none;
+            flex-direction: column;
             gap: 12px;
             margin: 20px 0;
         }
-    
+            
         .mobile-action {
             background: #4b5b2f;
             color: #fff;
@@ -187,17 +188,26 @@
             font-weight: bold;
             text-align: center;
             cursor: pointer;
+
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+
+            box-sizing: border-box;
         }
     
         .mobile-faq-content {
             display: none;
             background: #4b5b2f;
-            margin-top: 10px;
-            padding: 15px;
+            padding: 14px;
             border-radius: 10px;
             color: #fff;
+
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
         }
-    
+            
         @media (max-width: 768px) {
     
             .floating-button {
@@ -209,7 +219,7 @@
             }
     
             .mobile-actions {
-                display: block;
+                display: flex;
             }
 
            .trab-button {
@@ -338,7 +348,7 @@
 
     <a href="https://wa.me/5531999974600?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20a%20faturar%20com%20a%20iGreen."
         target="_blank" class="floating-button trab-button">
-        Trabalhe<br>Conosco
+        Trabalhe Conosco
     </a>
 
     <div class="faq" id="faq">
